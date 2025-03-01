@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Chatbot</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
     <style>
         /* General Reset */
         * {
@@ -212,11 +214,14 @@
             const messageDiv = document.createElement('p');
             const formattedTime = new Date(timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
+            // Parse Markdown and sanitize HTML
+            const parsedContent = DOMPurify.sanitize(marked.parse(content));
+
             if (sender === 'user') {
-                messageDiv.innerHTML = `<strong>You:</strong> ${content}<span class="timestamp">${formattedTime}</span>`;
+                messageDiv.innerHTML = `<strong>You:</strong> ${parsedContent}<span class="timestamp">${formattedTime}</span>`;
                 messageDiv.className = 'user-message';
             } else {
-                messageDiv.innerHTML = `<strong>Assistant:</strong> ${content}<span class="timestamp">${formattedTime}</span>`;
+                messageDiv.innerHTML = `<strong>Assistant:</strong> ${parsedContent}<span class="timestamp">${formattedTime}</span>`;
                 messageDiv.className = 'assistant-message';
             }
 
