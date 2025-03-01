@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LangGraph Chatbot</title>
+    <title>Smart Chatbot</title>
     <style>
         /* General Reset */
         * {
@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #121212;
+            background: #1a1a1a; /* Dark background for better contrast */
             color: #e0e0e0;
             display: flex;
             flex-direction: column;
@@ -27,7 +27,7 @@
         h1 {
             font-size: 2rem;
             margin-bottom: 10px;
-            color: #bb86fc;
+            color: #bb86fc; /* Vibrant accent color */
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
@@ -41,7 +41,7 @@
         .chat-container {
             width: 90%;
             max-width: 500px;
-            background: #1e1e1e;
+            background: #2e2e2e; /* Darker background for chat container */
             border-radius: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
             overflow: hidden;
@@ -61,13 +61,13 @@
         }
 
         #chat-box p strong {
-            color: #bb86fc;
+            color: #bb86fc; /* Vibrant accent color for sender names */
         }
 
         .user-message {
             text-align: right;
             color: #fff;
-            background: #03dac6;
+            background: #03dac6; /* Bright teal for user messages */
             padding: 8px 12px;
             border-radius: 10px;
             display: inline-block;
@@ -75,8 +75,8 @@
 
         .assistant-message {
             text-align: left;
-            color: #e0e0e0;
-            background: #424242;
+            color: #e0e0e0; /* Light gray for assistant messages */
+            background: #424242; /* Dark gray background */
             padding: 8px 12px;
             border-radius: 10px;
             display: inline-block;
@@ -93,7 +93,7 @@
             display: flex;
             align-items: center;
             padding: 10px;
-            background: #1e1e1e;
+            background: #2e2e2e; /* Matches chat container background */
         }
 
         #input-box {
@@ -104,18 +104,18 @@
             font-size: 1rem;
             outline: none;
             transition: border-color 0.3s ease;
-            background: #2e2e2e;
-            color: #e0e0e0;
+            background: #3e3e3e; /* Slightly lighter than background */
+            color: #e0e0e0; /* Light text for better visibility */
         }
 
         #input-box:focus {
-            border-color: #bb86fc;
+            border-color: #bb86fc; /* Highlight on focus */
         }
 
         #send-btn {
             margin-left: 10px;
             padding: 10px 15px;
-            background: #bb86fc;
+            background: #bb86fc; /* Vibrant accent color */
             color: #121212;
             border: none;
             border-radius: 8px;
@@ -125,13 +125,13 @@
         }
 
         #send-btn:hover {
-            background: #9c27b0;
+            background: #9c27b0; /* Darker shade on hover */
         }
 
         #clear-chat-btn {
             margin-left: 10px;
             padding: 10px 15px;
-            background: #ff5252;
+            background: #ff5252; /* Red for clear button */
             color: #fff;
             border: none;
             border-radius: 8px;
@@ -141,7 +141,7 @@
         }
 
         #clear-chat-btn:hover {
-            background: #d32f2f;
+            background: #d32f2f; /* Darker red on hover */
         }
 
         /* Scrollbar Styling */
@@ -150,18 +150,18 @@
         }
 
         #chat-box::-webkit-scrollbar-thumb {
-            background: #424242;
+            background: #424242; /* Dark gray scrollbar thumb */
             border-radius: 4px;
         }
 
         #chat-box::-webkit-scrollbar-thumb:hover {
-            background: #666;
+            background: #666; /* Lighter gray on hover */
         }
     </style>
 </head>
 <body>
-    <h1>🌟 LangGraph Chatbot</h1>
-    <p class="description">Your smart assistant powered by LangGraph! Ask anything, get instant answers, and enjoy seamless conversations.</p>
+    <h1>🌟 Smart Chatbot</h1>
+    <p class="description">Your intelligent assistant, ready to answer questions, provide insights, and engage in meaningful conversations.</p>
     <div class="chat-container">
         <div id="chat-box"></div>
         <div class="input-container">
